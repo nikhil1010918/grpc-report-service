@@ -12,13 +12,16 @@ This project is a gRPC-based report generation system in Go, with a cron job tha
 
 ## Usage
 
-### 1. Generate Go code from proto
+### 1. Generate Go code from proto(only if changes have been done to 'report.proto' file)
 
 ```sh
 protoc --go_out=. --go-grpc_out=. --proto_path=proto proto/report.proto
 ```
-
-### 2. Run the server
+### 2. Download the dependencies
+```sh
+go mod tidy
+```
+### 3. Run the server
 
 ```sh
 go run main.go
